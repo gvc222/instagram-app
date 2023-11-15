@@ -12,7 +12,7 @@ function Timeline() {
             timestamp: "2d"
         },
         {
-            user: "jiseng",
+            user: "zhicheng",
             postImage: "https://th.bing.com/th/id/R.55413ee656b6c186e61ec878dfb34caf?rik=yI%2bsk1bgeSSaNA&riu=http%3a%2f%2ffightersgeneration.com%2fnx7%2fgame%2fjjba-stage-naples-train-station.jpg&ehk=pCKjVMp%2fv%2f9R46Cpi49zP9crd7Abm8gultBN06dh53Y%3d&risl=&pid=ImgRaw&r=0",
             likes: 167,
             timestamp: "2d"
