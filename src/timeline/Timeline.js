@@ -4,7 +4,7 @@ import Suggestions from './Suggestions'
 import Post from './posts/Post'
 import { useState } from 'react';
 function Timeline() {
-    const [posts] = useState([
+    const [posts, setPosts] = useState([
         {
             user: "boinkie",
             postImage: "https://th.bing.com/th/id/R.ff25770a33193cb2184449425f1fee6a?rik=7C%2fRBavNaLmUhg&pid=ImgRaw&r=0",

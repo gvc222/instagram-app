@@ -1,7 +1,18 @@
 import React from 'react'
 import "./Sidenav.css"
+import { Avatar } from "@mui/material";
+import { useDispatch, useSelector } from 'react-redux';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
+import { logoutUser } from '../features/userSlice';
 
 function Sidenav() {
+    const user = useSelector(state => state.data.user.user);
+    const dispatch = useDispatch();
+    const handleLogout = () => {
+        dispatch(logoutUser());
+        signOut(auth);
+    }
   return (
     <div className="sidenav">
         <img
@@ -40,10 +51,11 @@ function Sidenav() {
             <svg aria-label="New post" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>New post</title><path d="M2 12v3.45c0 2.849.698 4.005 1.606 4.944.94.909 2.098 1.608 4.946 1.608h6.896c2.848 0 4.006-.7 4.946-1.608C21.302 19.455 22 18.3 22 15.45V8.552c0-2.849-.698-4.006-1.606-4.945C19.454 2.7 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.547 2 5.703 2 8.552Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="6.545" x2="17.455" y1="12.001" y2="12.001"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12.003" x2="12.003" y1="6.545" y2="17.455"></line></svg>
             <span>Create</span>
         </button>
-        {/* <button className="sidenav__button">
-            
-            <span>Profile</span>
-        </button> */}
+        <button className="sidenav__button">
+            <Avatar>{user.username ? user.username.charAt(0).toUpperCase() : "A"}</Avatar>
+            <span>{user.username}</span>
+            <button className="logout__button" onClick={handleLogout}>Log out</button>
+        </button>
 
 
       </div>
