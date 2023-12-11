@@ -4,6 +4,7 @@ import Suggestions from './Suggestions'
 import Post from './posts/Post'
 import { useState } from 'react';
 function Timeline() {
+    // eslint-disable-next-line
     const [posts, setPosts] = useState([
         {
             user: "boinkie",
